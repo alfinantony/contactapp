@@ -1,0 +1,190 @@
+                                             Contact Management System
+                                ---------------------------------------------------------
+
+
+Basic Building Blocks
+---------------------
+
+1: Module – Used to add 3rd party libraries
+2: Components – To create Html pages (html, css, ts)
+3: Selector – Used to select the components
+4: Services – Used to share data between components
+5: Dependency Injection – Data share between 2 depended classes 
+
+
+
+CMS Steps
+---------
+1: Create angular project --- { ng  new contact_app}
+2: cd contact_app
+3: code .
+4: project run --- { ng serve --open}
+5: Install bootstrap,font awesome, google font
+       1} bootstrap install --- { npm i bootstrap }
+       2} font awesome install -- { npm i @fortawesome/fontawesome-free }
+       3} config - To avoid site down problem
+
+6: Component Creation 
+
+        1}Contact Manager - It will display all contact and manage them
+            syntax  : ng g c contactManager
+
+        2}Add contact - Add new contact
+              syntax  : ng g c addContact
+
+        3}Update contact - Update existing contact 
+                  syntax :  ng g c updateContact
+
+        4} View contact - view contact
+                 syntax : ng g c viewContact
+
+7: Routing --- Setup path for each component that we need to display in web page.
+               filename : [ app-routing.module.ts] , Routes []
+
+              1}http://localhost:4200/contact-manager  or  (/admin)
+
+   ' ' which indicates - http://localhost:4200/
+-------------------for contact manager-------------------
+
+                     Routes = [
+                          {
+                                                                                        ''which indicates-  http://localhost:4200/
+                     path:'',redirectTo:'contact/admin',pathMatch:'full'
+                          },
+                     {                                                                         
+                       path:'contact/admin',component:ContactManagerComponent
+                     }
+                            ];
+
+              2} Use <router-outlet></router-outlet> Selector inside the app.component.html page to view the requested component.
+
+-------------------for add --------------------
+                      {
+                          path:'contact/add',component:AddContactComponent
+                      }
+
+-------------------for update --------------------
+                       {
+    // http://localhost:4200//Contact/update-------------------------- path---------------
+                     path:'contact/update',component:UpdateContactComponent 
+                       }
+
+  -------------------for view --------------------
+                      {
+                        // http://localhost:4200//Contact/view ------
+                       path:'contact/view/:contactId',component:ViewContactComponent         // -- here ":" is used to specif the ID
+                       }
+
+ 
+8: Create a PageNotFound Component  -- ng g c pageNotFound
+ 
+  -------------------for Page not found --------------------
+                          {
+                            //page not found component --------- "**"-indicates the error page, because we don't know the path
+                        path:'**',component:PageNotFoundComponent
+                          }
+9: Create Component for Navbar and Footer
+        ng g c Navbar
+        ng g c Footer
+
+10: Complete design of frontend components
+11: API Creation
+        Open jsonplaceholder site - my json server { For demo purpose}
+
+12: Server Creation
+       1} create a folder inside the project folder->  src/server
+       2} Create a db.json file in the server folder
+       3} Add your data into the db.json file
+       4} Backend Setup 
+            i} Create a package.json file for server - npm init
+            ii} For running db.json file - npm i json-server  
+            iii} run - npm start
+                      Error -> in package.json
+                       "scripts": {
+                       "start":"json-server --watch db.json --port 3000"
+                                   },
+13) Create a model for contact and group 
+       -  Create model folder in src folder
+       - Create myContact.ts file in model folder
+       - create myGroup.ts file in model folder
+
+14) Data fetching 
+              JS- Data fetching -> promise -> .then() catch()
+              Ts- Data fetching -> observable -> .subscribe() catch() -rxjs ( to resolving asynchronous action)
+
+15) Create  services –     ng g s service_name
+               [services – Reuseable code that can  be shared between components]
+               Syntax   :   ng g service/api
+16) To get http methods – get, post, put , delete
+          i) Import httpClientModule in app.module.ts
+17) Dependency Injection – Data share  between two dependent classes
+       - perform inside the constructor
+       - Syntax : access specifier variable_name: class_name
+      
+18) Dependency Injection in api services
+       Private http:HttpClient
+19) Data Binding – Data sharing inside a component 
+   	1} One way Data Binding – Data passes through one direction  [ html to Ts      OR  Ts to html ]
+	                          Component means – ts
+                                 View – html
+           a)	Component to view ( ts -> html )
+              i)String interpolation {{variable_name}} 
+              ii)Property Binding [Attribute_name]=”property_name”
+
+           b) View to component (html -> ts)
+               i) Event binding - (event)="function_name()"
+                    note: Js    - onclick
+                          Ts    - click
+
+               ii) Event Binding using $event -(event)=function_name($event)  
+
+       2} Two way data binding - data passes through two directions
+                                   html -> ts / view to component
+                                   ts ->html / component to view        
+
+20) Directive -To manipulate html DOM 
+	             1) Component Directive
+	             2) Structural Directive
+		                i) *ngIf=”condition”
+	                       ii) *ngFor=”Let var_name of array_name”  
+
+21) Activated Route - It provides access to information about a route associated with a component that is loaded in an outlet.
+
+              parameters -
+                         - url
+                         - params
+[if you have any doubts search angular.io and search for Activated Routes]
+
+22) Understanding pipes  - Use pipes to transform strings, currency amounts, dates, and other data for display.
+                  
+                  DatePipe: Formats a date value according to locale rules.
+                  UpperCasePipe: Transforms text to all upper case.
+                  LowerCasePipe: Transforms text to all lower case.
+                  CurrencyPipe: Transforms a number to a currency string, formatted according to locale rules.
+                  DecimalPipe: Transforms a number into a string with a decimal point, formatted according to locale rules.
+                  PercentPipe: Transforms a number to a percentage string, formatted according to locale rules.
+
+       Searching pipes
+
+              creating pipes - ng g p pipefolder/pipe_name                 
+         
+                      - ng g p pipes/filter -- type in terminal
+
+                     An interface that is implemented by pipes in order to perform a transformation. Angular invokes the transform method with the value of a binding as the first argument, and any parameters as the second argument in list form.
+              method :
+                     interface PipeTransform {
+                     transform(value: any, ...args: any[]): any       
+                     }
+
+       parameters for searching : 
+
+              1) allcontacts - array_name  [ array of contact details]
+              2) searchkey - To enter a search value
+              3) propName -  Property name [ value based on a content]
+
+23) Event Binding - for searching
+
+24) Add contact - Two way data binding
+
+                     ngModel - Import formModules in appModule
+                     syntax : [(ngModel)]="property_name"

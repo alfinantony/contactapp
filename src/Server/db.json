@@ -1,0 +1,78 @@
+{
+  "contact": [
+    {
+      "id": "1001",
+      "name": "Manu K V",
+      "email": "Manu@gmail.com",
+      "company": "ABC Company",
+      "phone": "9898988989",
+      "photo": "https://cdn3d.iconscout.com/3d/premium/thumb/administrator-8188071-6521100.png",
+      "title": "HR",
+      "groupId": "1"
+    },
+    {
+      "id": "1002",
+      "name": "Akhil M",
+      "email": "akhil@gmail.com",
+      "company": "BCD Company",
+      "phone": "858585866",
+      "photo": "https://cdn3d.iconscout.com/3d/premium/thumb/manager-8188092-6521121.png",
+      "title": "Designer",
+      "groupId": "2"
+    },
+    {
+      "id": "1003",
+      "name": "Anu V",
+      "email": "Anu@gmail.com",
+      "company": "GFD Company",
+      "phone": "78787898",
+      "photo": "https://cdn3d.iconscout.com/3d/premium/thumb/businesswoman-5691508-4741049.png",
+      "title": "Content Writer",
+      "groupId": "3"
+    },
+    {
+      "id": "1004",
+      "name": "Raj M",
+      "email": "Raj@gmail.com",
+      "company": "RRM Company",
+      "phone": "741852963",
+      "photo": "https://cdn3d.iconscout.com/3d/premium/thumb/stylish-boy-8024439-6430708.png",
+      "title": "Designer",
+      "groupId": "2"
+    },
+    {
+      "groupId": "2",
+      "id": "5",
+      "name": "Rahul",
+      "photo": "https://cdn3d.iconscout.com/3d/premium/thumb/young-man-5748694-4800737.png?f=webp",
+      "phone": "989856874",
+      "email": "rahul@gmail.com",
+      "company": "EFD",
+      "title": "Hr"
+    },
+    {
+      "groupId": "3",
+      "id": "6",
+      "name": "Rose Jacob",
+      "phone": "1234567890",
+      "email": "Rose@gmail.com",
+      "company": "GTH",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXGm7BwCgYmwGZmYdDCh6KRoY0Pu0tNpF8HQ&usqp=CAU",
+      "title": "Manager"
+    }
+  ],
+  "group": [
+    {
+      "id": "1",
+      "name": "Family"
+    },
+    {
+      "id": "2",
+      "name": "Friends"
+    },
+    {
+      "id": "3",
+      "name": "Company"
+    }
+  ]
+}

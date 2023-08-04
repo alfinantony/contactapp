@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center my-4"><i class="fa-solid fa-eye"></i> <b> View Contact</b> </h1>
+            <p style="text-align: justify;">Cloud-based CRM software has the potential to change all this. With contact and customer relationship management based in the cloud, employees can update the system with the very latest information about a contact wherever they are – from a smartphone, a tablet or any other web-enabled device. That data is then immediately accessible to anyone else in the organisation who needs it, giving real-time access to the latest data.</p>
+        </div>
+    </div>
+
+
+    <!-- <pre>
+       {{contact|json}}
+    </pre>  -->
+    
+
+    <div class="row">
+        <div class="col mt-5">
+           
+            <ul class="list-group">
+                <li class="list-group-item">Name :{{contact.name}}</li>
+                <!-- <li class="list-group-item">Photo Url</li> -->
+                <li class="list-group-item">Email : {{contact.email}}</li>
+                <li class="list-group-item">Mobile:{{contact.phone}}</li>
+                <li class="list-group-item">Company Name: {{contact.company}}</li>
+                <li class="list-group-item">Title : {{contact.title}}</li>
+                <li class="list-group-item">Group : {{groupName}}</li>
+              </ul>
+
+
+              <a routerLink="/" type="submit"  class="btn btn-warning mt-3"> Go Back</a>
+        </div>
+        <div class="col" style="text-align: center;">
+            <!-- Image -->
+            <img width="75%" [src]="contact.photo" alt="">
+        </div>
+    </div>
+    
+</div>
